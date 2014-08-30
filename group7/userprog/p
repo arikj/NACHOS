@@ -1,0 +1,365 @@
+Parent PID: 0Parent PID: 1Parent PID: 2Parent PID: 3Parent PID: 4Parent PID: 5Parent PID: 6Parent PID: 7Parent PID: 8Parent PID: 9Parent PID: 10Parent PID: 11Parent PID: 12Parent PID: 13Parent PID: 14Parent PID: 15Parent PID: 16Parent PID: 17Parent PID: 18Parent PID: 19Parent PID: 20Parent PID: 21Parent PID: 22Parent PID: 23num pages: 4offset: 80
+Page fault: 1
+PC3=0 PID=0
+Page fault: 2
+PC3=480 PID=0
+Page fault: 3
+PC3=484 PID=0
+Page fault: 4
+PC3=240 PID=0
+Page fault: 5
+PC3=244 PID=0
+Page fault: 6
+PC3=288 PID=0
+PC=168
+PC2=168
+[pid 0]: Exit called. Code: 0
+Page fault: 7
+PC3=168 PID=1
+Page fault: 8
+PC3=536 PID=1
+Page fault: 9
+PC3=536 PID=1
+Page fault: 10
+PC3=0 PID=1
+Page fault: 11
+PC3=480 PID=1
+Page fault: 12
+PC3=288 PID=1
+PC=168
+PC2=168
+[pid 1]: Exit called. Code: 0
+Page fault: 13
+PC3=168 PID=2
+Page fault: 14
+PC3=536 PID=2
+Page fault: 15
+PC3=536 PID=2
+Page fault: 16
+PC3=0 PID=2
+Page fault: 17
+PC3=480 PID=2
+Page fault: 18
+PC3=288 PID=2
+PC=168
+PC2=168
+[pid 2]: Exit called. Code: 0
+Page fault: 19
+PC3=168 PID=3
+Page fault: 20
+PC3=536 PID=3
+Page fault: 21
+PC3=536 PID=3
+Page fault: 22
+PC3=0 PID=3
+Page fault: 23
+PC3=480 PID=3
+Page fault: 24
+PC3=288 PID=3
+PC=168
+PC2=168
+[pid 3]: Exit called. Code: 0
+Page fault: 25
+PC3=168 PID=4
+Page fault: 26
+PC3=536 PID=4
+Page fault: 27
+PC3=536 PID=4
+Page fault: 28
+PC3=0 PID=4
+Page fault: 29
+PC3=480 PID=4
+Page fault: 30
+PC3=288 PID=4
+PC=168
+PC2=168
+[pid 4]: Exit called. Code: 0
+Page fault: 31
+PC3=168 PID=5
+Page fault: 32
+PC3=536 PID=5
+Page fault: 33
+PC3=536 PID=5
+Page fault: 34
+PC3=0 PID=5
+Page fault: 35
+PC3=480 PID=5
+Page fault: 36
+PC3=288 PID=5
+PC=168
+PC2=168
+[pid 5]: Exit called. Code: 0
+Page fault: 37
+PC3=168 PID=6
+Page fault: 38
+PC3=536 PID=6
+Page fault: 39
+PC3=536 PID=6
+Page fault: 40
+PC3=0 PID=6
+Page fault: 41
+PC3=480 PID=6
+Page fault: 42
+PC3=288 PID=6
+PC=168
+PC2=168
+[pid 6]: Exit called. Code: 0
+Page fault: 43
+PC3=168 PID=7
+Page fault: 44
+PC3=536 PID=7
+Page fault: 45
+PC3=536 PID=7
+Page fault: 46
+PC3=0 PID=7
+Page fault: 47
+PC3=480 PID=7
+Page fault: 48
+PC3=288 PID=7
+PC=168
+PC2=168
+[pid 7]: Exit called. Code: 0
+Page fault: 49
+PC3=168 PID=8
+Page fault: 50
+PC3=536 PID=8
+Page fault: 51
+PC3=536 PID=8
+Page fault: 52
+PC3=0 PID=8
+Page fault: 53
+PC3=480 PID=8
+Page fault: 54
+PC3=288 PID=8
+PC=168
+PC2=168
+[pid 8]: Exit called. Code: 0
+Page fault: 55
+PC3=168 PID=9
+Page fault: 56
+PC3=536 PID=9
+Page fault: 57
+PC3=536 PID=9
+Page fault: 58
+PC3=0 PID=9
+Page fault: 59
+PC3=480 PID=9
+Page fault: 60
+PC3=288 PID=9
+PC=168
+PC2=168
+[pid 9]: Exit called. Code: 0
+Page fault: 61
+PC3=168 PID=10
+Page fault: 62
+PC3=536 PID=10
+Page fault: 63
+PC3=536 PID=10
+Page fault: 64
+PC3=0 PID=10
+Page fault: 65
+PC3=480 PID=10
+Page fault: 66
+PC3=288 PID=10
+PC=168
+PC2=168
+[pid 10]: Exit called. Code: 0
+Page fault: 67
+PC3=168 PID=11
+Page fault: 68
+PC3=536 PID=11
+Page fault: 69
+PC3=536 PID=11
+Page fault: 70
+PC3=0 PID=11
+Page fault: 71
+PC3=480 PID=11
+Page fault: 72
+PC3=288 PID=11
+PC=168
+PC2=168
+[pid 11]: Exit called. Code: 0
+Page fault: 73
+PC3=168 PID=12
+Page fault: 74
+PC3=536 PID=12
+Page fault: 75
+PC3=536 PID=12
+Page fault: 76
+PC3=0 PID=12
+Page fault: 77
+PC3=480 PID=12
+Page fault: 78
+PC3=288 PID=12
+PC=168
+PC2=168
+[pid 12]: Exit called. Code: 0
+Page fault: 79
+PC3=168 PID=13
+Page fault: 80
+PC3=536 PID=13
+Page fault: 81
+PC3=536 PID=13
+Page fault: 82
+PC3=0 PID=13
+Page fault: 83
+PC3=480 PID=13
+Page fault: 84
+PC3=288 PID=13
+PC=168
+PC2=168
+[pid 13]: Exit called. Code: 0
+Page fault: 85
+PC3=168 PID=14
+Page fault: 86
+PC3=536 PID=14
+Page fault: 87
+PC3=536 PID=14
+Page fault: 88
+PC3=0 PID=14
+Page fault: 89
+PC3=480 PID=14
+Page fault: 90
+PC3=288 PID=14
+PC=168
+PC2=168
+[pid 14]: Exit called. Code: 0
+Page fault: 91
+PC3=168 PID=15
+Page fault: 92
+PC3=536 PID=15
+Page fault: 93
+PC3=536 PID=15
+Page fault: 94
+PC3=0 PID=15
+Page fault: 95
+PC3=480 PID=15
+Page fault: 96
+PC3=288 PID=15
+PC=168
+PC2=168
+[pid 15]: Exit called. Code: 0
+Page fault: 97
+PC3=168 PID=16
+Page fault: 98
+PC3=536 PID=16
+Page fault: 99
+PC3=536 PID=16
+Page fault: 100
+PC3=0 PID=16
+Page fault: 101
+PC3=480 PID=16
+Page fault: 102
+PC3=288 PID=16
+PC=168
+PC2=168
+[pid 16]: Exit called. Code: 0
+Page fault: 103
+PC3=168 PID=17
+Page fault: 104
+PC3=536 PID=17
+Page fault: 105
+PC3=536 PID=17
+Page fault: 106
+PC3=0 PID=17
+Page fault: 107
+PC3=480 PID=17
+Page fault: 108
+PC3=288 PID=17
+PC=168
+PC2=168
+[pid 17]: Exit called. Code: 0
+Page fault: 109
+PC3=168 PID=18
+Page fault: 110
+PC3=536 PID=18
+Page fault: 111
+PC3=536 PID=18
+Page fault: 112
+PC3=0 PID=18
+Page fault: 113
+PC3=480 PID=18
+Page fault: 114
+PC3=288 PID=18
+PC=168
+PC2=168
+[pid 18]: Exit called. Code: 0
+Page fault: 115
+PC3=168 PID=19
+Page fault: 116
+PC3=536 PID=19
+Page fault: 117
+PC3=536 PID=19
+Page fault: 118
+PC3=0 PID=19
+Page fault: 119
+PC3=480 PID=19
+Page fault: 120
+PC3=288 PID=19
+PC=168
+PC2=168
+[pid 19]: Exit called. Code: 0
+Page fault: 121
+PC3=168 PID=20
+Page fault: 122
+PC3=536 PID=20
+Page fault: 123
+PC3=536 PID=20
+Page fault: 124
+PC3=0 PID=20
+Page fault: 125
+PC3=480 PID=20
+Page fault: 126
+PC3=288 PID=20
+PC=168
+PC2=168
+[pid 20]: Exit called. Code: 0
+Page fault: 127
+PC3=168 PID=21
+Page fault: 128
+PC3=536 PID=21
+Page fault: 129
+PC3=536 PID=21
+Page fault: 130
+PC3=0 PID=21
+Page fault: 131
+PC3=480 PID=21
+Page fault: 132
+PC3=288 PID=21
+PC=168
+PC2=168
+[pid 21]: Exit called. Code: 0
+Page fault: 133
+PC3=168 PID=22
+Page fault: 134
+PC3=536 PID=22
+Page fault: 135
+PC3=536 PID=22
+Page fault: 136
+PC3=0 PID=22
+Page fault: 137
+PC3=480 PID=22
+Page fault: 138
+PC3=288 PID=22
+PC=168
+PC2=168
+[pid 22]: Exit called. Code: 0
+Page fault: 139
+PC3=168 PID=23
+Page fault: 140
+PC3=536 PID=23
+Page fault: 141
+PC3=536 PID=23
+Page fault: 142
+PC3=0 PID=23
+Page fault: 143
+PC3=480 PID=23
+Page fault: 144
+PC3=288 PID=23
+PC=168
+PC2=168
+[pid 23]: Exit called. Code: 0
+Page fault: 145
+PC3=168 PID=24
+
+Cleaning up...

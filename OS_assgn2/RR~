@@ -1,0 +1,9 @@
+Average CPU time = 325
+
+Comparison among different Quanta:
+
+Quanta		CPU utilisation			Average waiting time
+100		0.77612523362
+200		0.76703776839
+300		0.76258643143
+400             0.76085083162

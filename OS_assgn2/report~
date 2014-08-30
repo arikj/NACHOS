@@ -1,0 +1,64 @@
+
+We have used following formula for calculating the prediction of next CPU burst:
+
+		S(n+1) = a*T(n) + (1-a)*S(n)
+
+		where S(n) is the nth CPU burst prediction
+		and T(n) is the actual nth CPU burst
+
+		Using a = 0.5 and S(0) = 0
+
+Since, the algorithm learns from the previous history of CPU bursts, i.e. it takes into consideration the last CPU burst, the prediction becomes more accurate as the number of CPU bursts increases.
+Therefore the average error in prediction decreases with increasing CPU bursts.
+
+RR:
+Minimum thread completion time: 155518
+Maximum thread completion time: 163108
+Average thread completion time: 161238
+Variance of thread completion time: 4721420
+
+Unix:
+Minimum thread completion time: 62138
+Maximum thread completion time: 133841
+Average thread completion time: 113676
+Variance of thread completion time: 104671933
+  
+
+			batch0	batch1	batch2	batch3	batch4
+CPU Error Estimation	84811	83994	67148	81250	42823
+CPU Error Estimation	0.94	1.00	0.81	1.00	0.69
+ / Total CPU Burst
+
+for batch0, batch1 and batch2:
+In each iteration, there is a large CPU burst followed by small I/O burst. Our, prediction for next CPU burst gets better with each such iteration. After this for loop, let the predicted next CPU burst be t1.
+
+batch0 : 
+Minimum CPU burst: 10
+Maximum CPU burst: 2151
+Average CPU burst: 123
+The program in this batch have several small CPU bursts(say, t2) after the for loop explained above. Now, since t2 << t1, the error in prediction increases considerably but over the course of time, prediction gets more and more accurate and therefore, the overall error remains high.
+
+batch1:
+Minimum CPU burst: 10
+Maximum CPU burst: 2145
+Average CPU burst: 426
+In this batch again, the programs have small CPU bursts (length, t2) after the looping explained above. The error in the prediction increases as in batch 0. But here the total CPU burst does not increase as much, with respect to the increase in the numerator, as in the batch 0. Thus overall the ratio of the CPU Error and the total CPU burst increases a lot, even greater than the previous case (where it seems that the scheduler gets enough time to correct itself).
+
+batch2:
+Minimum CPU burst: 22
+Maximum CPU burst: 2156
+Average CPU burst: 1382
+In this batch there is only a small CPU burst after the looping. As above there is a difference in the predicted and the actual CPU burst and the numerator value increases. But the overall ratio drops (although still a very poor efficiency) to the least among all the three batches because of a relately larger denomenator.
+
+batch3:
+Minimum CPU burst: 8116
+Maximum CPU burst: 8206
+Average CPU burst: 8125
+Since this batch contains the program with only one CPU burst, i.e. no I/O burst and we are taking first prediction S(0) = 0, error is very large.
+
+batch4:
+Minimum CPU burst: 34
+Maximum CPU burst: 2126
+Average CPU burst: 1636
+This batch contains two program which yield after each iteration of outer_bound. Since each CPU burst of program1 are equal, therefore prediction error becomes very less. Similarly, CPU burst error estimation is less for program2 and therefore, overall prediction error in estimating CPU bursts decreases.
+

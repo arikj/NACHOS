@@ -1,0 +1,12 @@
+synch.cc:	scheduler->ReadyToRun(thread);
+thread.cc:    scheduler->ReadyToRun(this);	// ReadyToRun assumes that interrupts 
+thread.cc:      scheduler->ReadyToRun(this);
+thread.cc:    while ((nextThread = scheduler->FindNextToRun()) == NULL) {
+thread.cc:    scheduler->Run(nextThread); // returns when we've been signalled
+thread.cc:    nextThread = scheduler->FindNextToRun();
+thread.cc:	scheduler->ReadyToRun(this);
+thread.cc:	scheduler->Run(nextThread);
+thread.cc:    while ((nextThread = scheduler->FindNextToRun()) == NULL) {
+thread.cc:    scheduler->Run(nextThread); // returns when we've been signalled
+thread.cc:    scheduler->ReadyToRun(this);        // ReadyToRun assumes that interrupts
+thread.cc:   scheduler->Tail();

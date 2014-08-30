@@ -1,0 +1,79 @@
+Dequeuer 0: waiting on queue empty.
+Enqueuer 0: Inserted 0 in slot 0
+Dequeuer 0: Got 0 from slot 0
+Enqueuer 1: Inserted 10 in slot 1
+Enqueuer 0: Inserted 1 in slot 2
+Dequeuer 0: Got 10 from slot 1
+Dequeuer 0: Got 1 from slot 2
+Enqueuer 0: Inserted 2 in slot 1
+Enqueuer 1: Inserted 11 in slot 0
+Dequeuer 0: Got 11 from slot 0
+Dequeuer 0: Got 2 from slot 1
+Enqueuer 1: Inserted 12 in slot 0
+Enqueuer 0: Inserted 3 in slot 2
+Dequeuer 0: Got 3 from slot 2
+Enqueuer 1: Inserted 13 in slot 1
+Enqueuer 0: Inserted 4 in slot 2
+Enqueuer 0: waiting on queue full.
+Enqueuer 1: Inserted 14 in slot 0
+Enqueuer 1: waiting on queue full.
+Dequeuer 0: Got 12 from slot 0
+Dequeuer 0: Got 13 from slot 1
+Enqueuer 0: Inserted 5 in slot 1
+Enqueuer 0: waiting on queue full.
+Enqueuer 1: Inserted 15 in slot 2
+Enqueuer 1: waiting on queue full.
+Dequeuer 0: Got 4 from slot 2
+Dequeuer 0: Got 14 from slot 0
+Dequeuer 0: Got 5 from slot 1
+Enqueuer 0: Inserted 6 in slot 0
+Enqueuer 1: Inserted 16 in slot 1
+Enqueuer 1: waiting on queue full.
+Enqueuer 0: Inserted 7 in slot 2
+Enqueuer 0: waiting on queue full.
+Dequeuer 0: Got 15 from slot 2
+Dequeuer 0: Got 6 from slot 0
+Enqueuer 1: Inserted 17 in slot 0
+Enqueuer 1: waiting on queue full.
+Enqueuer 0: Inserted 8 in slot 1
+Enqueuer 0: waiting on queue full.
+Dequeuer 0: Got 16 from slot 1
+Dequeuer 0: Got 7 from slot 2
+Enqueuer 1: Inserted 18 in slot 2
+Enqueuer 1: waiting on queue full.
+Enqueuer 0: Inserted 9 in slot 0
+Dequeuer 0: Got 17 from slot 0
+Dequeuer 0: Got 8 from slot 1
+Enqueuer 1: Inserted 19 in slot 1
+Dequeuer 0: Got 18 from slot 2
+Dequeuer 0: Got 9 from slot 0
+Dequeuer 0: Got 19 from slot 1
+Parent joined with 1 having exit code 20
+Parent joined with 2 having exit code 10
+Parent joined with 3 having exit code 10
+value = 1
+value = 1
+[pid 0] Before sleep in JoinWithChild.
+[pid 2]: Exit called. Code: 10
+[pid 3]: Exit called. Code: 10
+[pid 1]: Exit called. Code: 20
+[pid 0] After sleep in JoinWithChild.
+Machine halting!
+
+Ticks: total 218143, idle 188762, system 20660, user 8721
+Disk I/O: reads 0, writes 0
+Console I/O: reads 0, writes 1753
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Total simulated ticks: 218143
+Total CPU busy time: 29314
+Non-zero CPU burst statistics: count: 1839, max: 196, min: 10, mean: 15.94
+Number of context switches through yield or preemption: 37, Number of non-preemptive context switches: 1802
+Total time for which the ready queue is empty: 188762
+Wait time in ready queue: Total: 6056, Average: 1514.00
+
+Total page faults: 35
+Completion time statistics for all threads: Max: 203630, Min: 182644, Avg: 144894.50, Variance: 1804590848.00
+
+Cleaning up...

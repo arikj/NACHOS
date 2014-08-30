@@ -1,0 +1,2 @@
+progtest.cc:	//scheduler->Print();
+progtest.cc:	Thread *temp = scheduler->FindNextToRun();

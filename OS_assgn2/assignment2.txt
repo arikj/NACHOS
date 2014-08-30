@@ -1,0 +1,99 @@
+In this assignment, we will experiment with a few scheduling algorithms in NachOS. In the first
+part of the assignment, you will incorporate a way to submit a batch of jobs to NachOS at time zero.
+The second part explores the scheduling algorithms.
+
+Download cs330assignment2.zip and unzip it in your home directory. This will create a new directory
+named cs330assignment2/ and place my version of NachOS under it. Protect your cs330assignment2/
+directory by executing chmod.
+
+> cd
+> chmod -R 700 cs330assignment2/
+
+If you plan to continue using your submission from the last assignment, please copy
+~/cs330assignment2/nachos/code/test/Makefile, ~/cs330assignment2/nachos/code/test/forkjoin_hard.c,
+and ~/cs330assignment2/nachos/code/test/testloop.c into your test directory. Please set NumPhysPages
+to 128 in machine.h.
+
+BATCH SUBMISSION OF JOBS
+-------------------------
+
+Modify nachos/code/threads/main.cc so that it can accept a new option -F followed by a plain text file as
+follows. You should compile and run NachOS from the userprog directory, as you did in the last assignment.
+
+> ./nachos -F filename
+
+The plain text file contains several lines, where each line specifies an executable user program name followed
+by an optional priority of the job. The priority must be an integer between 0 and 100 (both inclusive). A higher priority value
+signifies a lower priority (as in UNIX). If a priority value for a job is not mentioned, a default priority value
+of 100 is assumed. The file contents may look like the following.
+
+../test/printtest 90
+../test/vectorsum 50
+../test/forkjoin
+../test/testloop 60
+../test/testloop
+../test/vectorsum 70
+
+NachOS reads this file, creates one thread corresponding to each specified executable, and enqueues it in the
+ready queue. After enqueuing all jobs in the ready queue, it invokes the scheduler to start the execution.
+
+SCHEDULING ALGORITHMS
+----------------------
+
+NachOS implements a non-preemptive scheduling algorithm if the timer is off. In this assignment, we will
+experiment with this non-preemptive algorithm, non-preemptive shortest next CPU burst first algorithm with 
+an exponentially averaged CPU burst estimation, a fixed quantum round-robin scheduling algorithm, and a 
+UNIX-like priority scheduling algorithm. The first three algorithms will ignore the priority values of the 
+processes. In all evaluations, we will use the testloop.c program, which runs several iterations of the 
+vectorsum loop with a short I/O burst in each iteration. We will evaluate each algorithm in terms of CPU 
+utilization and average wait time in the ready queue. You will submit a batch of ten copies of the testloop.c 
+program to NachOS.
+
+To decide the fixed quantum in the last two algorithms, first get an estimate of the CPU burst lengths in
+the testloop.c program. This can be done by running a copy of this program on NachOS and measuring the ticks
+between I/O operations. Evaluate the algorithms for three different quanta: one-fourth, half, and three-fourth
+of the average CPU burst length. Can you find out the minimum value of the quantum that offers the maximum
+achievable CPU utilization?
+
+For the UNIX scheduler, submit the ten jobs with equal priority value of 70. This priority value is added to the
+base priority of 50 at time zero. On each timer interrupt, the priority values of all jobs are updated as in the 
+UNIX scheduler (see the worked out example in Maurice Bach's book on page 253 as depicted in Figure 8.4 of Chapter 4).
+The CPU usage is measured in terms of ticks. When a process enters the kernel mode, its priority is set to 20.
+On return to the user mode, the process restores its priority value that it had before entering the kernel mode.
+
+WHAT TO SUBMIT
+---------------
+
+Prepare two tables, one for CPU utilization and one for average wait time in ready queue. Each table should
+report the results for the following ten scheduling policies.
+
+1. Non-preemptive default NachOS scheduling
+2. Non-preemptive shortest next CPU burst first algorithm
+3, 4, 5, 6. Round-robin with three different quanta and the minimum quantum that maximizes CPU utilization
+7, 8, 9, 10. UNIX scheduler with three different quanta and the minimum quantum that maximizes CPU utilization
+
+Put these tables along with explanations in a pdf document. Name the pdf file groupX.pdf (replace X by your assigned 
+group id).
+
+Execute make clean in the threads and userprog directories. Prepare the submission zip ball of
+your machine/, threads/, and userprog/ directories.
+
+> cd nachos/code/
+> zip -r groupX.zip machine/ threads/ userprog/
+
+Replace X by your assigned group id. Send an email to
+cs330autumn2013@gmail.com with subject "[CS330] Assignment2" and attach
+groupX.zip and groupX.pdf to the mail. The body of the mail should contain the following
+two sentences.
+
+1. I have not copied any part of this submission from any other group.
+2. I have not helped any other group copy any part of this submission.
+
+All the members of the group should put their names and roll numbers below the
+statement.
+
+PUNISHMENT FOR CHEATING
+------------------------
+
+Members of any group found cheating or helping others cheat will be assigned an F grade in
+the course.

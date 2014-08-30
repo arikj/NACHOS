@@ -1,0 +1,129 @@
+You need to simulate ten different scheduling algorithms in this 
+assignment, as discussed in the section ``WHAT TO SUBMIT''. The first line 
+of your plain text input file should be a positive integer specifying 
+which scheduling algorithm should be simulated. This will make sure that 
+you won't have to change the source code and compile NachOS every time you 
+want to simulate a new algorithm. I have included this clarification in 
+the assignment text. Please remember that my test input files will accept 
+only this format of input and nothing else
+
+
+Remember that every thread in the system must do a clean exit. In other 
+words, when your main thread exits, it must update the relevant data 
+structures with this information so that when a child exits later it 
+doesn't think that the parent hasn't exited yet.
+
+
+1. Please use the attached testloop.c for all your experiments. It has two 
+small changes compared to the previous one. First, the OUTER_BOUND is 
+reduced to a smaller tractable value. Second, each outer loop iteration 
+now involves two back-to-back PrintInt calls. They print pid-1. Since you 
+will create ten children, PIDs of which will range from 1 to 10, pid-1 
+will be a single digit number resulting in just one I/O write. You can 
+easily see in what order the threads execute the I/O operations. The t
+reason for invoking PrintInt twice in a row is that I/O writes are as such 
+non-blocking. Only an immediate second invocation would block the caller 
+because the I/O buffer is busy (P() has been called on the semaphore 
+protecting the I/O buffer, but not V()). Therefore, two PutChars are 
+needed to force a context-switch in each iteration. When you measure your 
+CPU bursts, this should be the time for which the current thread runs 
+without getting switched out. So, a CPU burst may include the system call 
+that initiates the first I/O write because that would be non-blocking and 
+won't cause a context switch, unless some other thread has already 
+initiated an I/O write.
+
+2. NumPhysPages should be set to at least 256 in machine.h.
+
+
+
+You just need to comment the Timer constructor invocation in system.cc. 
+This is needed only in the non-preemptive scheduling algorithms. In all 
+other cases, the timer should be ON.
+
+
+You may see certain CPU bursts to be of zero length. You should try to 
+understand why this is happening. However, you should not include these 
+trivial bursts in your estimation algorithm.
+
+
+1. A process comes with an initial priority. This priority should be added 
+to the default base priority (50) to calculate the new base priority for 
+this process. This new base priority should be used in all subsequent 
+calculations of priority for this process. For example, if a process comes 
+with an initial priority of 70. Its base priority will be 120 and the 
+priority of this process will never go below 120. On each context switch, 
+the new priority should be updated as in the UNIX scheduler assuming 120 
+as the base priority. The initial priority of a process serves the purpose 
+of the nice value.
+
+2. The assignment mentioned that the CPU usage and priorities are updated 
+on each timer interrupt. This is slightly wrong. These should be updated 
+on every context switch. Remember that a context switch can happen before 
+the expiry of the quantum due to a blocking I/O operation. However, this 
+raises an issue about fixing the quantum because we cannot really invoke a 
+preemptive context switch unless the timer interrupt comes. To give you 
+an example of this problem, suppose the timer interrupt strikes every 100 
+ticks. Suppose the quantum is 200 ticks. In the normal case, this is fine 
+and the scheduler would do a context switch on every other timer 
+interrupt. Now, suppose a process goes on a blocking I/O after 120 ticks 
+into its quantum. The scheduler schedules a new process and this process's 
+quantum expires at a point (not a multiple of 100) when there cannot be a 
+timer interrupt. There is no way to avoid this problem. In general, the 
+ratio between the quantum length and the timer interrupt interval is kept 
+large to minimize this error. For this assignment, the scheduler should do 
+a pre-emptive context switch only when a timer interrupt strikes and
+the CPU burst length of the currently running process is at least 
+equal to the quantum (of course, it may have to do an early context 
+switch due to a blocking I/O encountered by the currently running 
+process). This problem is not specific to the UNIX scheduler and can 
+happen in any quantum-based scheduling algorithm.
+
+
+To simplify the UNIX scheduler simulation, I have removed the part that 
+asked you to change the base priority of a process when it enters the 
+kernel mode and restore it back when it returns from the kernel mode. 
+There is no need to do that, since we do not have much kernel activity in 
+our test program and the system ticks are not accounted for accurately in 
+NachOS (the kernel code actually does not run on the simulated MIPS 
+processor).
+
+
+CPU utilization
+The total simulation time should be the time spent between the end of simulation 
+(i.e., when Halt() is called) and the start time of the first CPU burst. 
+In the non-preemptive algorithms, a CPU burst ends when the current thread 
+switches from RUNNING to BLOCKED state. In the pre-emptive algorithms, 
+there is an additional reason for ending the CPU burst and that is expiry 
+of quantum. The CPU utilization should be the sum total of all CPU bursts 
+divided by the total simulation time. There are two ways to verify whether 
+your CPU utilization is correct.
+
+1. Submit a batch of processes that have no I/O. Your CPU utilization 
+should be nearly 1.0.
+
+2. Verify that your total simulation time is equal to the total CPU burst 
+time plus the time when there is nothing in the ready queue. You can also 
+check for each thread if its total simulation time is equal to its total 
+CPU burst time plus waiting time in ready queue plus the time it remains 
+in BLOCKED state.
+
+
+Remember that the first CPU burst starts when the main thread is set to 
+RUNNING status in threads/system.cc.
+
+
+
+
+I have added three new test loops. These are very similar to the test loop 
+you already have. These three new programs along with the updated Makefile 
+are attached to this mail. Place these in nachos/code/test/. You should 
+report your results on these four programs. In each case, you should 
+submit a batch of ten copies of the same program. For the algorithms that 
+require a time quantum, you should continue to fix the set of four quantum 
+values according to testloop.c as mentioned in the assignment. Use the 
+same set of four quantum values for all four batches.
+
+I have updated the assignment text as well on the course home. You need to 
+prepare two tables for each of the four batches
+
+
